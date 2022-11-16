@@ -1,0 +1,12 @@
+.dialog-class{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+mat-divider {
+    padding-bottom: 20px;
+}
+
+mat-form-field {
+    width: 100%;
+}

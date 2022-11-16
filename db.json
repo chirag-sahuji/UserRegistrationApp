@@ -1,0 +1,16 @@
+{
+  "userlist": [
+    {
+      "fname": "chirag",
+      "mname": "a",
+      "lname": "sahuji",
+      "age": 23,
+      "phone": "+918806491277",
+      "street": "p",
+      "city": "pune",
+      "state": "Maharashtra",
+      "pincode": 412207,
+      "id": 1
+    }
+  ]
+}
