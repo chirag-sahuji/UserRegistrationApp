@@ -17,16 +17,16 @@ export class UserAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.userform = this.fb.group({
-      fname: ['', Validators.required],
-      mname: ['', Validators.required],
-      lname: ['', Validators.required],
-      age: ['', Validators.required, Validators.min(18), Validators.max(60)],
+      fname: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z ]*$')])],
+      mname: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z ]*$')])],
+      lname: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z ]*$')])],
+      age: ['', Validators.compose([Validators.required, Validators.min(18), Validators.max(60)])],
       cc:['',Validators.required],
-      phone: ['', Validators.required,Validators.minLength(10)],
+      phone: ['', Validators.compose([Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')])],
       street: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required],
-      pincode: ['', Validators.required,Validators.maxLength(6)]
+      pincode: ['', Validators.compose([Validators.required, Validators.pattern('[0-9]{6}')])]
     })
     this.id = this.route.snapshot.params['id'];
     this.isInAddMode = !this.id
@@ -44,6 +44,33 @@ export class UserAddComponent implements OnInit {
 
   get fname() {
     return this.userform.get('fname');
+  }
+  get mname() {
+    return this.userform.get('mname');
+  }
+  get lname() {
+    return this.userform.get('lname');
+  }
+  get age() {
+    return this.userform.get('age');
+  }
+  get cc() {
+    return this.userform.get('cc');
+  }
+  get phone() {
+    return this.userform.get('phone');
+  }
+  get street() {
+    return this.userform.get('street');
+  }
+  get city() {
+    return this.userform.get('city');
+  }
+  get state() {
+    return this.userform.get('state');
+  }
+  get pincode() {
+    return this.userform.get('pincode')
   }
 
 

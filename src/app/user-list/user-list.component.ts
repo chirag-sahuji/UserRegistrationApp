@@ -10,7 +10,7 @@ import { ThisReceiver } from '@angular/compiler';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  displayedColumns: string[] = ['fname', 'mname', 'lname', 'age', 'phone', 'street', 'city', 'state', 'pincode', 'action'];
+  displayedColumns: string[] = ['name', 'age', 'phone', 'address', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
