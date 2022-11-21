@@ -1,0 +1,14 @@
+mat-card{
+    margin:50px 0 0 100px;
+    max-width: 80%;
+}
+mat-card-content{
+    display: flex;
+    margin-top: 25px;
+}
+mat-form-field{
+    width:50%;
+}
+.codefield{
+    width: 100px;
+}

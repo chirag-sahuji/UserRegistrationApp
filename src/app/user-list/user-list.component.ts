@@ -1,6 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { UserFormDialogComponent } from '../user-form-dialog/user-form-dialog.component'
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -12,24 +10,15 @@ import { ThisReceiver } from '@angular/compiler';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  displayedColumns: string[] = ['fname','mname','lname','age','phone','street','city','state','pincode','action'];
+  displayedColumns: string[] = ['fname', 'mname', 'lname', 'age', 'phone', 'street', 'city', 'state', 'pincode', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(private dialog : MatDialog,private api:ApiService) { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
     this.getAllusers()
-  }
-  openDialog() {
-    this.dialog.open(UserFormDialogComponent, {
-      width: '30%'
-    }).afterClosed().subscribe(val => {
-      if (val == 'add') {
-        this.getAllusers();
-      }
-    })
   }
   getAllusers() {
     this.api.getU().subscribe({
@@ -42,17 +31,6 @@ export class UserListComponent implements OnInit {
       }
     })
   }
-  editUser(row: any) {
-    this.dialog.open(UserFormDialogComponent, {
-      width: '30%',
-      data: row
-    }).afterClosed().subscribe(val => {
-      if (val == 'update') {
-        this.getAllusers();
-      }
-    })
-  }
-
   delUser(id: number) {
     this.api.deleteU(id)
       .subscribe({

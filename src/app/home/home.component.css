@@ -1,0 +1,31 @@
+.welcome{
+    background-image: url(https://d4y70tum9c2ak.cloudfront.net/articleThumbnail/5323ac113b7c4c98a84758ea98116c53/600.jpg);
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    opacity: .9;
+}
+.welcome-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        font-size: 50px;
+        color: #fff;
+        
+}
+.tiles{
+    display: flex;
+    margin-top: 15px;
+}
+mat-card{
+ flex: 1 1 auto;
+ max-height: 300px;
+ max-width: 300px;
+ margin: 0 10px 0 10px;
+ cursor: pointer;
+}
+mat-card img{
+    height: fit-content;
+}
