@@ -9,11 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http';
 import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
 import { UserAddComponent } from './user-add/user-add.component';
 import { HomeComponent } from './home/home.component';
 import { NgToastModule } from 'ng-angular-popup';
+import { LoggingInterceptor } from './logging.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,11 @@ import { NgToastModule } from 'ng-angular-popup';
     NgxMatIntlTelInputComponent,
     NgToastModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoggingInterceptor,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
