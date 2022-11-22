@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
 import { UserAddComponent } from './user-add/user-add.component';
 import { HomeComponent } from './home/home.component';
+import { NgToastModule } from 'ng-angular-popup';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxMatIntlTelInputComponent
+    NgxMatIntlTelInputComponent,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

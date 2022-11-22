@@ -1,5 +1,19 @@
 {
-  "userlist": [],
+  "userlist": [
+    {
+      "fname": "c",
+      "mname": "a",
+      "lname": "s",
+      "age": 23,
+      "cc": "+1-246",
+      "phone": 8806491277,
+      "street": "i",
+      "city": "p",
+      "state": "Maharashtra",
+      "pincode": 412207,
+      "id": 1
+    }
+  ],
   "states": [
     "Andhra Pradesh",
     "Arunachal Pradesh",

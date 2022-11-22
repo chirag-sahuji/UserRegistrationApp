@@ -23,6 +23,7 @@
     "bootstrap": "^4.0.0-beta",
     "jquery": "^3.6.1",
     "libphonenumber-js": "^1.10.14",
+    "ng-angular-popup": "^0.2.0",
     "ngx-mat-intl-tel-input": "^5.0.0",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+// import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-user-add',
   templateUrl: './user-add.component.html',
@@ -13,7 +15,7 @@ export class UserAddComponent implements OnInit {
   userform !: FormGroup
   states: string[] = []
   countrycodes: string[] = []
-  constructor(private fb: FormBuilder, private api: ApiService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private fb: FormBuilder, private api: ApiService, private route: ActivatedRoute, private router: Router,private toast:NgToastService) { }
 
   ngOnInit(): void {
     this.userform = this.fb.group({
@@ -89,11 +91,15 @@ export class UserAddComponent implements OnInit {
       this.api.postU(this.userform.value)
         .subscribe({
           next: (res) => {
-            alert("Employee Details Added Successfully");
+            this.toast.success({ detail:'Employee Details Added Successfully',duration:3000})
+            //alert("Employee Details Added Successfully");
             this.userform.reset();
             this.router.navigate(['/users'])
           }
-          , error: () => { alert("Error while adding employee details") }
+          , error: () => {
+            this.toast.error({ detail: 'Error while adding employee details', duration: 3000 })
+            //alert("Error while adding employee details")
+          }
         })
     }
   }
@@ -101,12 +107,14 @@ export class UserAddComponent implements OnInit {
     this.api.updateU(this.userform.value, this.id)
       .subscribe({
         next: (res) => {
-          alert("Employee details updated successfully");
+          this.toast.success({ detail: 'Employee details updated successfully', duration: 3000 })
+          //alert("Employee details updated successfully");
           this.userform.reset();
           this.router.navigate(['/users'])
         },
         error: () => {
-          alert("Error while updating the employee details")
+          this.toast.error({ detail: 'Error while updating the employee details', duration: 3000 })         
+          //alert("Error while updating the employee details")
         }
       })
   }

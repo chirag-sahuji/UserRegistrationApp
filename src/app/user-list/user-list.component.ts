@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from '../services/api.service';
+import { NgToastService } from 'ng-angular-popup';
+//import { ToastrService } from 'ngx-toastr';
 import { ThisReceiver } from '@angular/compiler';
 @Component({
   selector: 'app-user-list',
@@ -15,7 +17,7 @@ export class UserListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService,private toast:NgToastService) { }
 
   ngOnInit(): void {
     this.getAllusers()
@@ -27,7 +29,8 @@ export class UserListComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       }, error: (err) => {
-        alert("Error while fetching employee details");
+        this.toast.error({ detail: 'Error while fetching employee details', duration: 3000 })
+        //alert("Error while fetching employee details");
       }
     })
   }
@@ -35,10 +38,12 @@ export class UserListComponent implements OnInit {
     this.api.deleteU(id)
       .subscribe({
         next: (res) => {
-          alert("Deleted Employee details successfully");
+          this.toast.success({ detail: 'Deleted Employee details successfully', duration: 3000 })
+          //alert("Deleted Employee details successfully");
           this.getAllusers();
         }, error: () => {
-          alert("Error while deleting employee deatils")
+          this.toast.error({ detail: 'Error while deleting employee deatils', duration: 3000 })
+          //alert("Error while deleting employee deatils")
         }
       })
   }
