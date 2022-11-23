@@ -1,14 +1,14 @@
 {
   "userlist": [
     {
-      "fname": "c",
-      "mname": "a",
-      "lname": "s",
+      "fname": "a",
+      "mname": "b",
+      "lname": "c",
       "age": 21,
       "cc": "+91",
       "phone": 8806491277,
-      "street": "i",
-      "city": "p",
+      "street": "im",
+      "city": "pune",
       "state": "Maharashtra",
       "pincode": 412207,
       "id": 1
