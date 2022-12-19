@@ -27,6 +27,20 @@
       "state": "Maharashtra",
       "pincode": 411057,
       "id": 2
+    },
+    {
+      "fname": "Chiri",
+      "mname": "A",
+      "lname": "Don",
+      "age": 22,
+      "email": "cd@gmail.com",
+      "cc": "880",
+      "phone": 8888888888,
+      "street": "A",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": 411057,
+      "id": 3
     }
   ],
   "states": [
