@@ -11,7 +11,7 @@
         <mat-form-field appearance="outline">
             <mat-label>Type</mat-label>
             <mat-select formControlName="type">
-                <mat-option *ngFor="let t of type" [value]="t">{{t}}</mat-option>
+                <mat-option *ngFor="let t of types$|async" [value]="t">{{t}}</mat-option>
             </mat-select>
         </mat-form-field>
         <h2>Rating : </h2>

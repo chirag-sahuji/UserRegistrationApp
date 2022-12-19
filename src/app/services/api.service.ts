@@ -34,7 +34,7 @@ export class ApiService {
     return this.http.delete<any>(`${this.baseURL}/${id}`).pipe(tap(data => console.log(data)))
   }
   getStates(): Observable<any> {
-    return this.http.get("http://localhost:3000/states")
+    return this.http.get<any>("http://localhost:3000/states")
   }
   getCountryCode(): Observable<any> {
     return this.http.get("http://localhost:3000/phonecode")

@@ -46,7 +46,7 @@
                     <mat-form-field appearance="outline" class="codefield">
                         <mat-label>Area-Code</mat-label>
                         <mat-select formControlName="cc">
-                            <mat-option *ngFor="let countrycode of countrycodes" [value]="countrycode">{{countrycode}}</mat-option>
+                            <mat-option *ngFor="let countrycode of cc$|async" [value]="countrycode">{{countrycode}}</mat-option>
                         </mat-select>
                         <mat-error *ngIf="cc?.hasError('required')">Enter your area code</mat-error>
                     </mat-form-field>
@@ -70,7 +70,7 @@
                     <mat-form-field appearance="outline">
                         <mat-label>State</mat-label>
                         <mat-select formControlName="state">
-                            <mat-option *ngFor="let stat of states" [value]="stat">{{stat}}</mat-option>
+                            <mat-option *ngFor="let stat of state$|async" [value]="stat">{{stat}}</mat-option>
                         </mat-select>
                         <mat-error *ngIf="state?.hasError('required')">Enter your State</mat-error>
                     </mat-form-field>

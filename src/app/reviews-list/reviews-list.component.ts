@@ -4,8 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from '../services/api.service';
 import { NgToastService } from 'ng-angular-popup';
-import { formatDate } from '@angular/common';
-import { By } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-reviews-list',
   templateUrl: './reviews-list.component.html',

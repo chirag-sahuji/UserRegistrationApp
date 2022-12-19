@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
+import { Observable,map } from 'rxjs';
 // import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-user-add',
@@ -15,6 +16,8 @@ export class UserAddComponent implements OnInit {
   userform !: FormGroup
   states: string[] = []
   countrycodes: string[] = []
+  state$: Observable<any>;
+  cc$: Observable<any>;
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   constructor(private fb: FormBuilder, private api: ApiService, private route: ActivatedRoute, private router: Router,private toast:NgToastService) { }
 
@@ -38,12 +41,8 @@ export class UserAddComponent implements OnInit {
     if (!this.isInAddMode) {
       this.api.getUById(this.id).subscribe(x => this.userform.patchValue(x));
     }
-    this.api.getStates().subscribe(data => {
-      this.states = data
-    })
-    this.api.getCountryCode().subscribe(data => {
-      this.countrycodes = data
-    })
+    this.state$ = this.api.getStates();
+    this.cc$ = this.api.getCountryCode();
   }
 
   get fname() {
@@ -96,7 +95,7 @@ export class UserAddComponent implements OnInit {
       this.api.postU(this.userform.value)
         .subscribe({
           next: (res) => {
-            this.toast.success({ detail:'Employee Details Added Successfully',duration:3000})
+            this.toast.success({ detail: 'Employee Details Added Successfully', duration: 3000 })
             //alert("Employee Details Added Successfully");
             this.userform.reset();
             this.router.navigate(['/users'])

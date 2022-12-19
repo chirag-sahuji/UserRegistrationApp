@@ -4,6 +4,7 @@ import { ApiService } from '../services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { formatDate } from '@angular/common';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-reviews-add',
   templateUrl: './reviews-add.component.html',
@@ -12,6 +13,7 @@ import { formatDate } from '@angular/common';
 export class ReviewsAddComponent implements OnInit {
   reviewform!: FormGroup;
   type: string[] = [];
+  types$: Observable<any>;
   username: String = '';
   user_id!: number;
   myDate!: Date;
@@ -25,9 +27,7 @@ export class ReviewsAddComponent implements OnInit {
       rating: [''],
       comments : ['']
     })
-    this.api.getcategory().subscribe(data => {
-      this.type = data;
-    })
+    this.types$ = this.api.getcategory();
     if (localStorage.getItem('currentUser')) {
       let user = localStorage.getItem('currentUser');
       let p_user = user && JSON.parse(user);
@@ -35,10 +35,6 @@ export class ReviewsAddComponent implements OnInit {
       this.username = p_user.fname;
     }
   }
-  // utcTime(): void {
-  //   this.myDate = new Date();
-  //   console.log(this.myDate); // just testing if it is working
-  // }
   submit() {
     let rf = this.reviewform.value;
     this.myDate = new Date();
