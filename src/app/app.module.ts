@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -15,16 +15,28 @@ import { UserAddComponent } from './user-add/user-add.component';
 import { HomeComponent } from './home/home.component';
 import { NgToastModule } from 'ng-angular-popup';
 import { LoggingInterceptor } from './logging.interceptor';
+import { LoginComponent } from './login/login.component';
+import { UserHomeComponent } from './user-home/user-home.component';
+import { ReviewsListComponent } from './reviews-list/reviews-list.component';
+import { ReviewsAddComponent } from './reviews-add/reviews-add.component';
+import { NgxMaterialRatingModule } from 'ngx-material-rating';
+import { RatingComponent } from './user-rating/user-rating.component';
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     HeaderComponent,
     UserAddComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    UserHomeComponent,
+    ReviewsListComponent,
+    ReviewsAddComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
@@ -32,7 +44,8 @@ import { LoggingInterceptor } from './logging.interceptor';
     ReactiveFormsModule,
     HttpClientModule,
     NgxMatIntlTelInputComponent,
-    NgToastModule
+    NgToastModule,
+    NgxMaterialRatingModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

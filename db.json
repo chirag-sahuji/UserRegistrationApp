@@ -1,17 +1,32 @@
 {
   "userlist": [
     {
-      "fname": "a",
-      "mname": "b",
-      "lname": "c",
+      "fname": "Chirag",
+      "mname": "A",
+      "lname": "Sahuji",
       "age": 21,
+      "email": "chiragsahuji1602@gmail.com",
       "cc": "+91",
       "phone": 8806491277,
-      "street": "im",
-      "city": "pune",
+      "street": "I",
+      "city": "Pune",
       "state": "Maharashtra",
       "pincode": 412207,
       "id": 1
+    },
+    {
+      "fname": "Divya",
+      "mname": "A",
+      "lname": "Sahuji",
+      "age": 28,
+      "email": "ds@gmail.com",
+      "cc": "+91",
+      "phone": 8806216868,
+      "street": "A",
+      "city": "pune",
+      "state": "Maharashtra",
+      "pincode": 411057,
+      "id": 2
     }
   ],
   "states": [
@@ -289,5 +304,48 @@
     "380",
     "974",
     "258"
+  ],
+  "credentials": [
+    {
+      "email": "admin@admin.com",
+      "password": "admin"
+    }
+  ],
+  "category": [
+    "Course",
+    "Coding Language",
+    "Framework"
+  ],
+  "reviews": [
+    {
+      "name": "Intro",
+      "type": "Framework",
+      "rating": 3,
+      "comments": "Good",
+      "userId": 2,
+      "userName": "Divya",
+      "timestamp": "18-12-2022 08:06:26 PM",
+      "id": 1
+    },
+    {
+      "name": "Java",
+      "type": "Coding Language",
+      "rating": 3,
+      "comments": "Good",
+      "userId": 1,
+      "userName": "Chirag",
+      "timestamp": "19-12-2022 12:52:50 AM",
+      "id": 2
+    },
+    {
+      "name": "Python",
+      "type": "Coding Language",
+      "rating": 5,
+      "comments": "Excellent",
+      "userId": 1,
+      "userName": "Chirag",
+      "timestamp": "19-12-2022 01:43:04 AM",
+      "id": 3
+    }
   ]
 }

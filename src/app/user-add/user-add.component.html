@@ -35,6 +35,13 @@
                         <mat-error *ngIf="age?.hasError('min')">Your age must be greater than or equal to 18</mat-error>
                         <mat-error *ngIf="age?.hasError('max')">Your age must be less than or equal to 60</mat-error>
                     </mat-form-field>
+                    <legend>Email Address</legend>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email Address</mat-label>
+                        <input matInput formControlName="email" type="text">
+                        <mat-error *ngIf="email?.hasError('required')">Enter your Email Address</mat-error>
+                        <mat-error *ngIf="email?.hasError('pattern')">Enter Valid Email Address</mat-error>
+                    </mat-form-field>
                     <legend>Phone number</legend>
                     <mat-form-field appearance="outline" class="codefield">
                         <mat-label>Area-Code</mat-label>

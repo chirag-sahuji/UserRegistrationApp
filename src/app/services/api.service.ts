@@ -39,5 +39,17 @@ export class ApiService {
   getCountryCode(): Observable<any> {
     return this.http.get("http://localhost:3000/phonecode")
   }
+  getadminCred(): Observable<any>{
+    return this.http.get("http://localhost:3000/credentials")
+  }
+  getcategory(): Observable<any>{
+    return this.http.get("http://localhost:3000/category")
+  }
+  getReviews(): Observable<any>{
+    return this.http.get("http://localhost:3000/reviews").pipe(tap(data => console.log(data)));
+  }
+  postReviews(data:any): Observable<any>{
+    return this.http.post("http://localhost:3000/reviews", data).pipe(tap(data => console.log(data)));
+  }
 
 }

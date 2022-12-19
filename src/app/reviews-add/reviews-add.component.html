@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Write Review for Courses/Coding Languages/Frameworks</h1>
+    <hr>
+    <form [formGroup]="reviewform">
+        <h2>Name for which reviews are given : </h2>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput  type="text" formControlName="name">
+        </mat-form-field>
+        <h2>Category in which name belongs : </h2>
+        <mat-form-field appearance="outline">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type">
+                <mat-option *ngFor="let t of type" [value]="t">{{t}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <h2>Rating : </h2>
+        <mat-form-field>
+            <app-user-rating formControlName="rating"></app-user-rating>
+        </mat-form-field>
+        <h2>Comments : </h2>
+        <mat-form-field appearance="outline">
+            <mat-label>User Comment</mat-label>
+            <textarea matInput formControlName="comments"></textarea>
+        </mat-form-field>
+    </form>    
+    <button mat-raised-button color="warn" (click)="submit()">Add</button>
+</div>

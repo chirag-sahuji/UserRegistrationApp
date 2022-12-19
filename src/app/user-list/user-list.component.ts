@@ -9,10 +9,10 @@ import { ThisReceiver } from '@angular/compiler';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'age', 'phone', 'address', 'action'];
+  displayedColumns: string[] = ['name', 'age','email', 'phone', 'address', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

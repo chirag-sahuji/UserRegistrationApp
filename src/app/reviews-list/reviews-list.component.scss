@@ -1,0 +1,27 @@
+.spacer{
+        flex: 1 1 auto;
+}
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+.buttons{
+    margin: 20px;
+}
+table {
+    width: 100%;
+}
+
+.table-container {
+    margin: 40px;
+    width: 100%;
+}
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 18%;
+}

@@ -1,0 +1,26 @@
+.container-fluid{
+    background-color: aliceblue;
+}
+.main-wrapper {
+    display: block;
+    height: 100vh;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.main-wrapper mat-card {
+    margin-top: 25vh;
+}
+
+.main-wrapper mat-form-field {
+    width: 100%;
+}
+
+.main-wrapper mat-card-header {
+    justify-content: center;
+}
+.center{
+    text-align: center;
+}

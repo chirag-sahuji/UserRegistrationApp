@@ -7,7 +7,7 @@ import { NgToastService } from 'ng-angular-popup';
 @Component({
   selector: 'app-user-add',
   templateUrl: './user-add.component.html',
-  styleUrls: ['./user-add.component.css']
+  styleUrls: ['./user-add.component.scss']
 })
 export class UserAddComponent implements OnInit {
   id!: number
@@ -15,6 +15,7 @@ export class UserAddComponent implements OnInit {
   userform !: FormGroup
   states: string[] = []
   countrycodes: string[] = []
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   constructor(private fb: FormBuilder, private api: ApiService, private route: ActivatedRoute, private router: Router,private toast:NgToastService) { }
 
   ngOnInit(): void {
@@ -23,6 +24,7 @@ export class UserAddComponent implements OnInit {
       mname: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z ]*$')])],
       lname: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z ]*$')])],
       age: ['', Validators.compose([Validators.required, Validators.min(18), Validators.max(60)])],
+      email: ['', Validators.compose([Validators.required, Validators.pattern(this.emailPattern)])],
       cc:['',Validators.required],
       phone: ['', Validators.compose([Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')])],
       street: ['', Validators.required],
@@ -55,6 +57,9 @@ export class UserAddComponent implements OnInit {
   }
   get age() {
     return this.userform.get('age');
+  }
+  get email() {
+    return this.userform.get('email');
   }
   get cc() {
     return this.userform.get('cc');
