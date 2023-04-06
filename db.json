@@ -4,7 +4,7 @@
       "fname": "Chirag",
       "mname": "A",
       "lname": "Sahuji",
-      "age": 21,
+      "age": 22,
       "email": "chiragsahuji1602@gmail.com",
       "cc": "+91",
       "phone": 8806491277,
@@ -13,20 +13,6 @@
       "state": "Maharashtra",
       "pincode": 412207,
       "id": 1
-    },
-    {
-      "fname": "Divya",
-      "mname": "A",
-      "lname": "Sahuji",
-      "age": 28,
-      "email": "ds@gmail.com",
-      "cc": "+91",
-      "phone": 8806216868,
-      "street": "A",
-      "city": "pune",
-      "state": "Maharashtra",
-      "pincode": 411057,
-      "id": 2
     },
     {
       "fname": "Chiri",
@@ -332,33 +318,33 @@
   ],
   "reviews": [
     {
-      "name": "Intro",
+      "name": "React",
       "type": "Framework",
-      "rating": 3,
-      "comments": "Good",
-      "userId": 2,
-      "userName": "Divya",
-      "timestamp": "18-12-2022 08:06:26 PM",
-      "id": 1
-    },
-    {
-      "name": "Java",
-      "type": "Coding Language",
-      "rating": 3,
-      "comments": "Good",
-      "userId": 1,
-      "userName": "Chirag",
-      "timestamp": "19-12-2022 12:52:50 AM",
-      "id": 2
-    },
-    {
-      "name": "Python",
-      "type": "Coding Language",
       "rating": 5,
       "comments": "Excellent",
       "userId": 1,
       "userName": "Chirag",
-      "timestamp": "19-12-2022 01:43:04 AM",
+      "timestamp": "05-04-2023 01:55:46 PM",
+      "id": 1
+    },
+    {
+      "name": "Javascript",
+      "type": "Coding Language",
+      "rating": 4,
+      "comments": "Very good",
+      "userId": 1,
+      "userName": "Chirag",
+      "timestamp": "05-04-2023 01:57:12 PM",
+      "id": 2
+    },
+    {
+      "name": "Fundamentals of Core Java",
+      "type": "Course",
+      "rating": 5,
+      "comments": "Excellent",
+      "userId": 3,
+      "userName": "Chiri",
+      "timestamp": "05-04-2023 02:32:59 PM",
       "id": 3
     }
   ]

@@ -4,7 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from '../services/api.service';
 import { NgToastService } from 'ng-angular-popup';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs';
 @Component({
   selector: 'app-reviews-list',
   templateUrl: './reviews-list.component.html',
@@ -15,10 +16,9 @@ export class ReviewsListComponent implements OnInit {
   username: String = '';
   displayedColumns: string[] = ['Review For', 'Review By', 'Review Type', 'Rating', 'Comments','Date and Time'];
   dataSource!: MatTableDataSource<any>;
-
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(private api: ApiService, private toast: NgToastService) { }
+  constructor(private api: ApiService, private toast: NgToastService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getAllReviews();
